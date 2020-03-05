@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <!-- UI dimension -->
+    <dimen name="margin_short">8dp</dimen>
+    <dimen name="margin_simple">16dp</dimen>
+    <dimen name="margin_double">32dp</dimen>
+
+        <!-- Text sizes -->
+    <dimen name="text_size_simple">20sp</dimen>
+
+</resources>

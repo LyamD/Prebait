@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/profileFragment">
+
+    <fragment android:id="@+id/profileFragment"
+              android:name="com.prebait.thefishingsocialnetwork.home.HomeFragment"
+              android:label="Home" tools:layout="@layout/fragment_home">
+        <action android:id="@+id/action_profileFragment_to_newSessionFragment"
+                app:destination="@id/newSessionFragment"/>
+        <action android:id="@+id/action_profileFragment_to_sessionListFragment"
+                app:destination="@id/sessionListFragment"/>
+        <action android:id="@+id/action_profileFragment_to_inSessionFragment" app:destination="@id/inSessionFragment"/>
+        <action android:id="@+id/action_profileFragment_to_sessionsMapFragment"
+                app:destination="@id/sessionsMapFragment"/>
+    </fragment>
+    <fragment android:id="@+id/newSessionFragment"
+              android:name="com.prebait.thefishingsocialnetwork.session.newSession.NewSessionFragment"
+              android:label="Start a new session" tools:layout="@layout/fragment_new_session">
+        <action android:id="@+id/action_newSessionFragment_to_inSessionFragment"
+                app:destination="@id/inSessionFragment" app:popUpTo="@+id/profileFragment"/>
+    </fragment>
+    <fragment android:id="@+id/inSessionFragment"
+              android:name="com.prebait.thefishingsocialnetwork.session.inSession.InSessionFragment"
+              android:label="In a session" tools:layout="@layout/fragment_in_session">
+        <action android:id="@+id/action_inSessionFragment_to_smallCatchFragment"
+                app:destination="@id/smallCatchFragment"/>
+        <action android:id="@+id/action_inSessionFragment_to_bigCatchFragment" app:destination="@id/bigCatchFragment"/>
+        <action android:id="@+id/action_inSessionFragment_to_profileFragment" app:destination="@id/profileFragment"/>
+    </fragment>
+    <fragment android:id="@+id/smallCatchFragment"
+              android:name="com.prebait.thefishingsocialnetwork.session.catchs.smallCatchList.SmallCatchFragment"
+              android:label="Chose a fish" tools:layout="@layout/fragment_small_catch">
+        <action android:id="@+id/action_smallCatchFragment_to_inSessionFragment"
+                app:destination="@id/inSessionFragment"/>
+        <argument android:name="sessionID" app:argType="long"/>
+    </fragment>
+    <fragment android:id="@+id/bigCatchFragment"
+              android:name="com.prebait.thefishingsocialnetwork.session.catchs.bigCatch.BigCatchFragment"
+              android:label="Enter the data" tools:layout="@layout/fragment_big_catch">
+        <action android:id="@+id/action_bigCatchFragment_to_inSessionFragment" app:destination="@id/inSessionFragment"/>
+        <argument android:name="sessionID" app:argType="long"/>
+    </fragment>
+    <fragment android:id="@+id/sessionListFragment"
+              android:name="com.prebait.thefishingsocialnetwork.lists.sessionList.SessionListFragment"
+              android:label="Sessions list" tools:layout="@layout/fragment_session_list">
+        <action android:id="@+id/action_sessionListFragment_to_sessionDetailsFragment"
+                app:destination="@id/sessionDetailsFragment"/>
+    </fragment>
+    <fragment android:id="@+id/catchFragment" android:name="com.prebait.thefishingsocialnetwork.CatchFragment"
+              android:label="Fish details" tools:layout="@layout/fragment_catch_details"/>
+    <fragment android:id="@+id/sessionDetailsFragment"
+              android:name="com.prebait.thefishingsocialnetwork.lists.sessionDetails.SessionDetailsFragment"
+              android:label="SessionDetailsFragment">
+        <action android:id="@+id/action_sessionDetailsFragment_to_catchFragment" app:destination="@id/catchFragment"/>
+        <argument android:name="sessionID" app:argType="long"/>
+    </fragment>
+    <fragment android:id="@+id/sessionsMapFragment"
+              android:name="com.prebait.thefishingsocialnetwork.sessionmap.SessionsMapFragment"
+              android:label="SessionsMapFragment">
+        <action android:id="@+id/action_sessionsMapFragment_to_sessionDetailsFragment"
+                app:destination="@id/sessionDetailsFragment"/>
+    </fragment>
+</navigation>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="session"
+                type="com.prebait.thefishingsocialnetwork.database.entities.Session"
+        />
+        <variable
+                name="clickListener"
+                type="com.prebait.thefishingsocialnetwork.lists.adapters.SessionListener"
+        />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:onClick="@{() -> clickListener.onClick(session)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="@dimen/margin_short"
+            app:strokeColor="@color/primaryDarkColor"
+            app:strokeWidth="1dp"
+            app:rippleColor="@color/primaryLightColor"
+    >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <ImageView
+                    android:id="@+id/imgv_session_icon"
+                    app:sessionIcon="@{session}"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_margin="@dimen/margin_simple"
+            />
+
+            <TextView
+                    android:id="@+id/tv_session_name"
+                    app:sessionName="@{session}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/imgv_session_icon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="@dimen/margin_simple"
+                    android:layout_marginStart="@dimen/margin_simple"
+            />
+
+            <TextView
+                    android:id="@+id/tv_session_date"
+                    app:sessionDuration="@{session}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="3 March 2019"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_session_name"
+                    app:layout_constraintStart_toEndOf="@+id/imgv_session_icon"
+                    android:layout_marginTop="@dimen/margin_short"
+                    android:layout_marginStart="@dimen/margin_simple"
+            />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

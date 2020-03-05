@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+>
+    <data>
+        <variable
+                name="inSessionViewModel"
+                type="com.prebait.thefishingsocialnetwork.session.inSession.InSessionViewModel"/>
+    </data>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:fitsSystemWindows="true"
+            tools:context=".session.inSession.InSessionFragment"
+            android:layout_margin="@dimen/margin_simple"
+    >
+
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_small_catch"
+                android:onClick="@{() -> inSessionViewModel.navigateToSmallCatch()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="45"
+                android:text="Small catch"
+                app:cornerRadius="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_big_catch"
+                android:onClick="@{() -> inSessionViewModel.navigateToBigCatch()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="45"
+                android:text="Big catch"
+                app:cornerRadius="16dp"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_session_cancel"
+                    android:onClick="@{() -> inSessionViewModel.navigateSessionCanceled()}"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:text="Cancel session"
+                    android:layout_margin="@dimen/margin_simple"
+
+            />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_session_finish"
+                    android:onClick="@{() -> inSessionViewModel.navigateSessionFinished()}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="40"
+                    android:text="finish session"
+                    android:layout_margin="@dimen/margin_simple"
+                    app:shapeAppearanceOverlay="@style/ShapedButton"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

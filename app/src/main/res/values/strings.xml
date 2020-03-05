@@ -1,0 +1,39 @@
+<resources>
+
+    <string name="google_maps_key">AIzaSyD4FY-k8fpn4nZIxngJgN9ol_UcCNl5J1o</string>
+
+    <string name="app_name">Prebait</string>
+
+    <string name="add_image">Add an image</string>
+
+    <!-- Menu strings -->
+    <string name="home">Home</string>
+    <string name="session">My session</string>
+    <string name="news">News</string>
+    <string name="session_map">Sessions Map</string>
+    <string name="settings">Settings</string>
+    <string name="disconnect">Disconnect</string>
+
+    <!-- New Session -->
+    <string name="pic_is_empty">Spot picture is required</string>
+    <string name="name_is_empty">Session name is required</string>
+
+    <string name="minutes_length">%d minutes on %s</string>
+    <string name="hours_length">%d hours on %s</string>
+    <string name="seconds_length">%d seconds on %s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Big catch Spinner choices -->
+    <string-array name="spinner_fish_choices">
+        <item>Roach</item>
+        <item>Pike</item>
+    </string-array>
+
+    <!-- Output to TextView styled with a little HTML -->
+    <string name="title"><![CDATA[<h3>HERE IS YOUR SLEEP DATA</h3>]]></string>
+    <string name="start_time"><![CDATA[<b>Start:</b>]]></string>
+    <string name="end_time"><![CDATA[<b>End:</b>]]></string>
+    <string name="hours_slept"><![CDATA[<b>Hours:Minutes:Seconds</b>]]></string>
+</resources>

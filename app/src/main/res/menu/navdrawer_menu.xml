@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/home" android:id="@+id/profileFragment"/>
+    <item android:title="@string/session" android:id="@+id/sessionListFragment"/>
+    <item android:title="@string/session_map" android:id="@+id/sessionsMapFragment"/>
+    <item android:title="@string/settings" android:id="@+id/settings"/>
+</menu>

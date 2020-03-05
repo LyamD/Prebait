@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable 
+                name="fishModel" 
+                type="com.prebait.thefishingsocialnetwork.session.catchs.smallCatchList.FishModel"
+        />
+        <variable
+                name="clickListener"
+                type="com.prebait.thefishingsocialnetwork.session.catchs.smallCatchList.FishModelListener"
+        />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_short"
+    >
+
+        <com.google.android.material.card.MaterialCardView
+                android:onClick="@{() -> clickListener.onClick(fishModel)}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="4dp"
+                android:layout_margin="@dimen/margin_short"
+                app:strokeColor="@color/primaryDarkColor"
+                app:strokeWidth="1dp"
+                app:rippleColor="@color/primaryLightColor"
+        >
+
+            <ImageView
+                    android:id="@+id/imgvw_fish_image"
+                    app:fishModelImage="@{fishModel}"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:src="@drawable/roach"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"
+            />
+
+            <TextView
+                    android:id="@+id/tv_fish_name"
+                    app:fishModelName="@{fishModel}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ggggTest"
+                    android:textColor="@color/primaryDarkColor"
+            />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

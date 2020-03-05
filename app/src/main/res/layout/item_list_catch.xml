@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+                name="fishCatch"
+                type="com.prebait.thefishingsocialnetwork.database.entities.Fishcatch"
+        />
+        <variable
+                name="clickListener"
+                type="com.prebait.thefishingsocialnetwork.lists.adapters.CatchListListener"
+        />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:onClick="@{() -> clickListener.onClick(fishCatch)}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="4dp"
+            android:layout_margin="@dimen/margin_short"
+            app:strokeColor="@color/primaryDarkColor"
+            app:strokeWidth="1dp"
+            app:rippleColor="@color/primaryLightColor">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        >
+
+            <ImageView
+                    android:id="@+id/imgv_catch_picture"
+                    app:fishCatchImage="@{fishCatch}"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="@dimen/margin_simple"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tv_fish_species"
+                    app:fishCatchSpecies="@{fishCatch}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_simple"
+                    android:text="lelele"
+                    app:layout_constraintStart_toEndOf="@+id/imgv_catch_picture" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+
